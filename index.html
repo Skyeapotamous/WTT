@@ -1,23 +1,52 @@
 <!DOCTYPE html>
+<html lang="en">
+<meta name="referrer" content="no-referrer">
 <head>
     <title>What To Throw? </title>
-
+        
     <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
-    <div id = "word"> HELP ME !</div>
-
-    <img id = "image">
+    <h1>When you just don't know</h1>
+    <div id = "word"> </div>
+    <img id = "image"> </div>
     <div id = "credit"></div>
 
     <br>
 
-    <button onclick="generateRandom()">
-        HELP ME
-    </button>
+    <button onclick="generateRandom()">HELP ME</button>
+        
+    <script>
+        const items = [
+        {
+         word: "Shaped Mug",
+        image: "https://i.imgur.com/btTALtz.jpg",
+        credit:'<a href=https://www.etsy.com/shop/CallysCeramics?ref=shop-header-name&listing_id=4472564999&from_page=listing>Callys Ceramics</a>'
+        } ,
 
-        <script src="script.js"> </script>
+        {
+        word:"Fruit Mug",
+        image:"https://i.imgur.com/6kCFFjc.jpg",
+        credit:'<a href=https://www.etsy.com/shop/OssoCeramics?ref=shop-header-name&listing_id=1123559491&from_page=listing>Osso Ceramics</a>'
+        }
+   
+        ] ;
+
+        function generateRandom() {
+            const randomIndex = Math.floor(Math.random() * items.length) ;
+            const selected = items[randomIndex];
+
+            document.getElementById("word").textContent = selected.word ;
+
+            document.getElementById("image").src = selected.image;
+
+            document.getElementById("credit").innerHTML = selected.credit;
+
+            console.log("Button success:",selected);
+        }
+    </script>
+
 </body>
 </html>
